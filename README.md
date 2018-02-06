@@ -61,35 +61,73 @@ All configurations used by the SDK are provided by an external endpoint. This ma
 ## What kinds of data does the SDK collect
 With the default configuration, the SDK will collect information about what WiFi the user is connected to, his or her current location, and any nearby iBeacons. All events come with information about the device, such as the current battery level.
 
-The following is an example of a geolocation event. All of these data are sent with each event regardless of type. So when a WIFI event is reported, so are device info and geolocation info. 
+The following is an example of a geolocation event. All of these data are sent with each event.
 
 ```json
+
 {
-    "state" : {
-        "activity": 0,
-        "activityConfidence": "low",
-        "battery": 1.0,
-        "charging": false,
-        "foreground": true,
-        "timestamp" : 1513023966
-    },
 
-    "location" : {
-        "altitude": 2,
-        "bearing": 2.2,
-        "lat": 12.3232322,
-        "lon": 12.3232322,
-        "speed": 4,
-        "timestamp": 1513023966,
-        "hacc": 2,
-        "vacc": 4
-    },
+"events" : {
+	"device": {
+		"activity": true,
+		"adid": "1e90927e-8e19-1348-b7e0-f36732db49bc",
+		"adidLimited": false,
+		"appId": "com.prox.proxdemo",
+		"appVersion": "1.1",
+		"location": "always",
+		"manufacturer": "apple",
+		"mcc": 242,
+		"mnc": 12,
+		"model": "F8331",
+		"os": "iPhone7,1",
+		"osVersion": "11.2",
+		"sdkVersion": "1.0",
+		"timestamp": "2018-02-01T11:49:31+00:00",
+		"trackingEnabled": true
+	},
 
-    "connection" : {
-        "bssid": "Testing",
-        "lastUpdated": 1513023966,
-        "ssid": "testing",
-        "con_type": "wifi"
-    }
+	"state" : {
+		"activity": "stationary,automotive",
+		"battery": 1.0,
+		"charging": false,
+		"foreground": true,
+		"timestamp" : "2018-02-01T11:49:31+00:00"
+	},
+
+	"location" : {
+		"altitude": 2,
+		"bearing": 2.2,
+		"lat": 12.3232322,
+		"lon": 12.3232322,
+		"speed": 4,
+		"timestamp": "2018-02-01T11:49:31+00:00",
+		"hacc": 2,
+		"vacc": 4,
+		"type": "LOCATION"
+	},
+
+	"event" : {
+		"altitude": 2,
+		"bearing": 2.2,
+		"lat": 12.3232322,
+		"lon": 12.3232322,
+		"speed": 4,
+		"timestamp": "2018-02-01T11:49:31+00:00",
+		"hacc": 2,
+		"vacc": 4,
+		"type": "LOCATION"
+	},
+
+	"connection" : {
+		"bssid": "Testing",
+		"updated": "2018-02-01T11:49:31+00:00",
+		"ssid": "testing",
+		"type": "wifi"
+	}
 }
+}
+
 ```
+
+
+
